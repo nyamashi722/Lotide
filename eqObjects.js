@@ -25,7 +25,7 @@ function eqObjects(object1, object2) {
   } else {
     for (let item in object1) {
       if (Array.isArray(object1[item]) && (Array.isArray(object2[item]))) {
-        eqArrays(object1[item], object2[item]);
+        return eqArrays(object1[item], object2[item]);
       } else if (object1[item] !== object2[item]) {
         return false;
       }
@@ -33,3 +33,4 @@ function eqObjects(object1, object2) {
     return true;
   }
 }
+
