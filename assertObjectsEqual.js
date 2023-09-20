@@ -7,7 +7,7 @@ function assertObjectsEqual(actual, expected) {
       if (Array.isArray(actual[item]) && (Array.isArray(expected[item]))) {
         if (eqArrays(actual[item], expected[item]) === true) {
           console.log(`✅Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
-        } else if (eqArrays(actual[item], expected[item]) === false) {
+        } else {
           console.log(`🔴Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
         }
         return;
