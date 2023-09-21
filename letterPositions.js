@@ -1,26 +1,25 @@
-function assertArraysEqual(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    console.log(`🔴Assertion Failed: ${firstArray} !== ${secondArray}`);
-  } else {
-    for (let i = 0; i < firstArray.length; i++) {
-      if (firstArray[i] !== secondArray[i]) {
-        console.log(`🔴Assertion Failed: ${firstArray} !== ${secondArray}`);
-        return;
-      }
-    }
-    console.log(`✅Assertion Passed: ${firstArray} === ${secondArray}`);
-  }
-}
-
-function assertEqual(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅Assertion Passed: ${actual} === ${expected}`);
-  } else {
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected) === false) {
     console.log(`🔴Assertion Failed: ${actual} !== ${expected}`);
+  } else {
+    console.log(`✅Assertion Passed: ${actual} === ${expected}`);
   }
 }
 
-function letterPositions(sentence) {
+const eqArrays = function(firstArray, secondArray) {
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
+
+  for (let i = 0; i < firstArray.length; i++) {
+    if (firstArray[i] !== secondArray[i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+const letterPositions = function(sentence) {
   const results = {};
   const sentenceArray = sentence.split("");
 

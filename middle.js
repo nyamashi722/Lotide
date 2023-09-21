@@ -1,18 +1,12 @@
-function assertArraysEqual(firstArray, secondArray) {
-  if (firstArray.length !== secondArray.length) {
-    console.log(`🔴Assertion Failed: ${firstArray} !== ${secondArray}`);
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected) === false) {
+    console.log(`🔴Assertion Failed: ${actual} !== ${expected}`);
   } else {
-    for (let i = 0; i < firstArray.length; i++) {
-      if (firstArray[i] !== secondArray[i]) {
-        console.log(`🔴Assertion Failed: ${firstArray} !== ${secondArray}`);
-        return;
-      }
-    }
-    console.log(`✅Assertion Passed: ${firstArray} === ${secondArray}`);
+    console.log(`✅Assertion Passed: ${actual} === ${expected}`);
   }
 }
 
-function eqArrays(firstArray, secondArray) {
+const eqArrays = function(firstArray, secondArray) {
   if (firstArray.length !== secondArray.length) {
     return false;
   }
@@ -25,7 +19,7 @@ function eqArrays(firstArray, secondArray) {
   return true;
 }
 
-function middle(array) {
+const middle = function(array) {
   let middleArray = [];
   if (array.length < 3) {
     return middleArray;

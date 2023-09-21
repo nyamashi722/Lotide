@@ -1,4 +1,4 @@
-function assertEqual(actual, expected) {
+const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`✅Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -6,7 +6,7 @@ function assertEqual(actual, expected) {
   }
 }
 
-function countLetters(input) {
+const countLetters = function(input) {
   let lowerCaseInput = input.replace(/\W/g, "").toLowerCase();
   let result = {};
 
