@@ -1,7 +1,7 @@
 {
   "name": "@nyamashiro722/lotide",
   "version": "1.0.0",
-  "description": "mini clone of the lodash library",
+  "description": "this is a mini clone of the lodash library",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
